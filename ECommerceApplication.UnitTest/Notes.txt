@@ -1,0 +1,42 @@
+
+Unit Testing: software development technique for ensuring that individulas units of code work as expected. 
+unit testing is usually performed with methods and functions. 
+
+It's developers job to perform unit testing. 
+
+
+Database ---> Repository ---> Service ---> Controller
+
+We test always test for:
+
+Good cases: 
+Edge cases: 
+Known exception: 
+Unknown exception: 
+
+For testing: 
+1. Unit testing Framework. Example: MS Test, NUnit, XUnit 
+2. Mocking Framework      Example: Moq -->(most popular), FakeItEasy, NSubstitute
+
+CategoryUnitTestClass ----> GetAllCategoriesAsync() ---> CategoryRepositoryClass ---> GetAllAsync() ---->Database with EF
+
+Unit testing should be very fast and they should never depend on external dependencies like database. 
+
+
+AAA: Arrange, Act and Assert
+
+
+Test-driven development
+
+Integration Testing: is performed after unit testing. it is the kind of testing where differnt modules are combined together 
+and is tested with external dependency. 
+
+Load Testing: 
+Stress testing:
+
+Code Coverage = (Number of lines of the code executed by testing algorithm/Total number of lines of code in the component) * 100
+
+
+White box testing: example is unit testing and integration testing 
+
+Black box testing: example is end to end testing
