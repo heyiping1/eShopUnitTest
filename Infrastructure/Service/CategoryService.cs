@@ -64,16 +64,29 @@ namespace Infrastructure.Service
 
         public async Task<int> InsertCategoryAsync(CategoryRequestModel category)
         {
+            if (category.CategoryName == "" || category.CategoryName == null)
+            {
+                throw new ArgumentException($"Category name cannot be empty");
+            }
             Category c = new Category() {
                 CategoryName = category.CategoryName
                 
             };
 
-           return await categoryRepository.InsertAsync(c);
+
+            return await categoryRepository.InsertAsync(c);
         }
 
         public async Task<int> UpdateCategoryAsync(CategoryRequestModel category, int id)
         {
+            if (category.CategoryName == "" || category.CategoryName == null)
+            {
+                throw new ArgumentException($"Category name cannot be empty");
+            }
+            if (await categoryRepository.GetByIdAsync(id) ==  null)
+            {
+                throw new Exception($"Category with Id {id} not found");
+            }
             Category c = new Category() { 
             Id=id,
             CategoryName = category.CategoryName
